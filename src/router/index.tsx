@@ -3,7 +3,7 @@ import {
 } from "react-router-dom"
 import { createBrowserRouter } from "react-router-dom"
 
-import Test from "pages/test";
+import Home from "pages/home";
 import TodoList from "pages/todolist";
 
 interface RouteProps {
@@ -14,10 +14,10 @@ interface RouteProps {
 const routes: Array<RouteProps> = [
   {
     path: "/",
-    element: <Test />
+    element: <Home />
   },
   {
-    path: "/todolist",
+    path: "/posts",
     element: <TodoList />
   }
 ]

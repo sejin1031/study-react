@@ -12,7 +12,7 @@ const StyledMain = styled.main`
   display: flex;
   background: yellow;
   // min-height: 100%;
-  margin-top: 40px;
+  margin-top: 100px;
 `
 
 function Main (props: Props) {

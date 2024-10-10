@@ -3,6 +3,7 @@ import Feed from "components/TodoList/feed"
 import CustomInput from "components/TodoList/input"
 import { Link } from "react-router-dom"
 import { SetStateAction, useEffect, useState } from "react"
+import Layout from "layout"
 
 type Todo = {
   text: string;
@@ -65,24 +66,27 @@ function TodoList () {
   
 
   return (
-    <Feed>
-      <Link to={"/"}> Go To Home</Link>
+    <Layout>
+      <Feed>
+        <Link to={"/"}> Go To Home</Link>
 
-      <Card>
-        할일목록!!
-        <div>
-          <CustomInput onChange={(e: { target: { value: SetStateAction<string> } }) => setAddText(e.target.value)} value={addText} />
-          <button onClick={addTodoList}>Add</button>
-        </div>
-        
-        <ul>
-          {
-            todoList.map(v => <li key={v.text}><input type="checkbox" checked={v.done} onChange={e => changeTodoStatus(v)} />  {v.text} <button onClick={e => removeTodoList(v)}>x</button></li>)
-          }
-        </ul>
-      </Card>
+        <Card>
+          할일목록!!
+          <div>
+            <CustomInput onChange={(e: { target: { value: SetStateAction<string> } }) => setAddText(e.target.value)} value={addText} />
+            <button onClick={addTodoList}>Add</button>
+          </div>
+          
+          <ul>
+            {
+              todoList.map(v => <li key={v.text}><input type="checkbox" checked={v.done} onChange={e => changeTodoStatus(v)} />  {v.text} <button onClick={e => removeTodoList(v)}>x</button></li>)
+            }
+          </ul>
+        </Card>
 
-    </Feed>
+      </Feed>
+    </Layout>
+    
   )
 }
 
